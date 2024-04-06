@@ -1,12 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: 'Poppins';
+  padding-bottom: 50px;
+}
+
+p, h1 {
+  color: #2A5074;
+}
+
 .navbar {
-  padding: 20px;
+  padding: 50px;
+  padding-bottom: 0px;
   display: flex;
   align-items: center;
   margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid #000;
 }
 .navbar h1 {
-  color: #C47777;
+  color: #000;
 }
 .navbar .links {
   margin-left: auto;
@@ -15,8 +30,74 @@
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
-  color: #C47777;
+  color: #000;
 }
 .navbar a:hover {
-  color: #ed5684;
+  color: #6578A9;
+}
+
+.welcome-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.p-desc {
+  width: 50%;
+  align-self: center;
+  text-align: left;
+  margin: 40px;
+  padding: 20px;
+  border: 2px solid #6578A9;
+  border-radius: 50px;
+}
+
+.home-img {
+  width: 50%;
+  margin: 50px;
+}
+
+
+.radio-group {
+  display: flex;
+  gap: 10px; /* Adjust the gap between radio buttons as needed */
+  background-color: #ffd7d7;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px; /* Adjust the spacing between radio button and label */
+}
+
+.preferences-div {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center; /* Vertically center */
+}
+
+.pref-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Vertically center */
+  justify-content:center;
+  width: 75%;
+}
+
+.role-item {
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  align-items: start; /* Vertically center */
+  padding: 30px;
+}
+
+.role-icon {
+  width: 200px;
 }
