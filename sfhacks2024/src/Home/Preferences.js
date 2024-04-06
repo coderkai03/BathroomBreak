@@ -11,7 +11,11 @@ const Preference = ({ role, desc, imgFirst, imgurl }) => {
                 </>
             ) : (
                 <>
-
+                    <div className="role-item">
+                        <h1>{role}</h1>
+                        <p>{desc}</p>
+                    </div>
+                    <img className="role-icon" src={imgurl} />
                 </>
             )}
         </div>

@@ -2,6 +2,8 @@ import { useState } from "react"
 import Preference from "./Preferences"
 
 import police from "../civil-assets/police-pfp.png"
+import firefighter from "../civil-assets/firefighter-pfp.png"
+import emt from "../civil-assets/emt-pfp.png"
 
 
 const Home = () => {
@@ -19,11 +21,14 @@ const Home = () => {
                 <img
                 className="home-img"
                 src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/9tuoj3v0ff5-8%3A7?alt=media&token=d84848fe-ea23-4b2e-a466-994afa09da2d"/>
-                <p className="p-desc">Welcome to <b>Bathroom Break</b>, your ultimate destination for finding restrooms in <b>San Francisco</b> with ease.<br/><br/>Our interactive map and resources hub provide wheelchair-friendly routes and valuable information for disabled individuals to navigate the city confidently.</p>
+                <p className="p-desc">Looking to join law enforcement, emergency medical services, or firefighting?<br/><br/>
+                Study smarter for your civil service exam with <b>SF Civil Pro!</b></p>
             </div>
             <div className="preferences-div">
-                <h1>What's in your bathroom?</h1>
-                <Preference role={"Police"} desc={"arrests people"} imgFirst={true} imgurl={police} />
+                <h1 className="hear-from-us">Hear from our users</h1>
+                <Preference role={"911 Dispatcher"} desc={"911 dispatchers are trained professionals who answer emergency calls, gather critical information, and coordinate the dispatch of emergency services to the scene of incidents."} imgFirst={true} imgurl={police} />
+                <Preference role={"Firefighter"} desc={"911 dispatchers are trained professionals who answer emergency calls, gather critical information, and coordinate the dispatch of emergency services to the scene of incidents."} imgFirst={false} imgurl={firefighter} />
+                <Preference role={"Social Worker"} desc={"911 dispatchers are trained professionals who answer emergency calls, gather critical information, and coordinate the dispatch of emergency services to the scene of incidents."} imgFirst={true} imgurl={emt} />
             </div>
         </div>
     )

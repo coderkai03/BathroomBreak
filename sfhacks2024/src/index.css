@@ -47,9 +47,9 @@ p, h1 {
   align-self: center;
   text-align: left;
   margin: 40px;
-  padding: 20px;
+  padding: 30px;
   border: 2px solid #6578A9;
-  border-radius: 50px;
+  border-radius: 30px;
 }
 
 .home-img {
@@ -83,14 +83,18 @@ p, h1 {
 }
 
 .pref-item {
+  margin: 50px;
   display: flex;
   flex-direction: row;
   align-items: center; /* Vertically center */
-  justify-content:center;
+  justify-content: space-around;
   width: 75%;
 }
 
 .role-item {
+  border-radius: 50px;
+  width: 50%;
+  background-color: #e3f1ff;
   display: flex;
   flex-direction: column;
   align-content: start;
@@ -100,4 +104,8 @@ p, h1 {
 
 .role-icon {
   width: 200px;
+}
+
+.hear-from-us {
+  padding: 50px;
 }
