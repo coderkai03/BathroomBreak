@@ -1,0 +1,29 @@
+.top-banner {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.profile-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* set column sizes here */
+    grid-template-rows: auto auto; /* we want two rows */
+
+    grid-gap: 45px; /* how far between cells? */
+    grid-auto-flow: column; /* fill in by column, not row */
+
+    /* temporary property for visualization */
+    height: 150px;
+    text-align: center;
+}
+
+.profile-container div {
+    border: 5px solid #8093ff;
+    border-radius: 10px;
+    margin: 20px;
+}

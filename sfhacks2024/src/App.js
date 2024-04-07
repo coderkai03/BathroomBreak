@@ -4,6 +4,8 @@ import './App.css';
 import Navbar from './Navbar';
 import Home from './Home/Home';
 import Study from './Study/Study';
+import Exams from './Exams/Exams';
+import Profile from './Profile/Profile';
 
 function App() {
   return (
@@ -15,8 +17,14 @@ function App() {
             <Route exact path='/'>
               <Home />
             </Route>
-            <Route exact path='/map'>
+            <Route exact path='/study'>
               <Study />
+            </Route>
+            <Route exact path='/exams'>
+              <Exams />
+            </Route>
+            <Route exact path='/profile'>
+              <Profile />
             </Route>
           </Switch>
         </div>

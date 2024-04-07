@@ -3,11 +3,12 @@ import {Link} from 'react-router-dom'
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <h1>Bathroom Break</h1>
+            <h1>SF Civil Pro</h1>
             <div className="links">
                 <Link to='/'>Home</Link>
-                <Link to='/map' >Map</Link>
-                <Link to='/feedback' >Feedback</Link>
+                <Link to='/study' >Study</Link>
+                <Link to='/exams' >Exams</Link>
+                <Link to='/profile' >Profile</Link>
                 {/* onClick={ (event) => event.preventDefault() }  */}
             </div>
         </nav>
