@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Home from './Home/Home';
 import Study from './Study/Study';
 import Login from './Logins/Login';
+import Exam from './Exam/Exam';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
             </Route>
             {/* Placeholder routes for Exams and Profile */}
             <Route exact path='/exams'>
-              {/* Render Exams component here */}
+              <Exam />
             </Route>
             <Route exact path='/profile'>
               {/* Render Profile component here */}
