@@ -31,7 +31,13 @@ const Exam = () => {
       <div className="exam-edit">
         <input className="new-exam" placeholder = "New Exam" />
     </div>
-    
+    <input type="checkbox" id="checkbox1" name="checkbox1" value="value1" />
+<label htmlFor="checkbox1" className="checkbox-label">Police Department</label>
+
+<input type="checkbox" id="checkbox2" name="checkbox2" value="value2" />
+<label htmlFor="checkbox2" className="checkbox-label2">Fire Department</label>
+
+
     <p className="topics">Topics to Include</p>
     <div className="rectangle-topics" />
     <button className = "generate-button" onClick={generateExam}>
