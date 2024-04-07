@@ -1,8 +1,8 @@
 import React from 'react';
 import './profile.css';
-import profilePic from './profile/profilepic.gif';
+import profilePic from './profilepic.gif';
 
-const UserProfile = ({ name, dob, email, location, occupation, image }) => {
+const UserProfile = ({ name, occupation, image }) => {
   return (
     <div className="user-profile">
       <div className="profile-details">
@@ -12,9 +12,6 @@ const UserProfile = ({ name, dob, email, location, occupation, image }) => {
         <div className="profile-info">
           <h2>User Profile</h2>
           <p><strong>Name:</strong> {name}</p>
-          <p><strong>Date of Birth:</strong> {dob}</p>
-          <p><strong>Email:</strong> {email}</p>
-          <p><strong>Location:</strong> {location}</p>
           <p><strong>Occupation:</strong> {occupation}</p>
         </div>
       </div>
