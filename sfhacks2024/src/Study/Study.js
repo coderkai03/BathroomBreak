@@ -4,7 +4,7 @@ const Study = () => {
     
     return (
         <div>
-
+          
         </div>
     )
 }

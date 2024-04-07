@@ -1,19 +1,32 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Preference from "./Preferences"
 
 import police from "../civil-assets/police-pfp.png"
 import firefighter from "../civil-assets/firefighter-pfp.png"
 import emt from "../civil-assets/emt-pfp.png"
 
+import { initializeApp } from "firebase/app";
+import firebaseConfig from '../Logins/FBConfig'; // Import the Firebase configuration
+import { getAuth } from 'firebase/auth'
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 
 const Home = () => {
     const [showFact, setShowFact] = useState(false)
     const [disableBtn, setDisableBtn] = useState(false)
 
-    const handleFact = () => {
-        setShowFact(true)
-        setDisableBtn(true)
-    }
+    const history = useHistory()
+    const user = getAuth().currentUser
+
+
+    useEffect(() => {
+        if (!user) {
+            history.push('/login')
+        }
+    })
 
     return (
         <div className="body-div">
