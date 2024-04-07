@@ -1,0 +1,15 @@
+.top-banner {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.top-banner h1 {
+    margin: 10px;
+    font-size: 45px;
+}
+
+.top-banner h2 {
+    margin: 15px;
+}
