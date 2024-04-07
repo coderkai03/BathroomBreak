@@ -28,7 +28,7 @@ const AddDeck = () => {
 
   const openAi = new OpenAIApi(
     new Configuration({
-      apiKey: "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",
+      apiKey: "",
     })
   )
   
