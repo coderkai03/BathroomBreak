@@ -7,6 +7,7 @@ import Study from './Study/Study';
 import Login from './Logins/Login';
 import Deck from './Study/Deck';
 import AddDeck from './Study/AddDeck';
+import UserProfile from './Profile/profile';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
               {/* Render Exams component here */}
             </Route>
             <Route exact path='/profile'>
-              {/* Render Profile component here */}
+              <UserProfile />
             </Route>
             <Route exact path='/deck/:deckId'>
               <Deck />

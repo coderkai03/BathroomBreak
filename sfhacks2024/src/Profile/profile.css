@@ -1,0 +1,30 @@
+.user-profile {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .profile-details {
+    display: flex;
+  }
+  
+  /* .profile-image-container {
+    margin-right: 20px;
+  } */
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  .profile-info {
+    flex: 1;
+  }
+  
+  .profile-info h2 {
+    margin-top: 0;
+  }
+  
