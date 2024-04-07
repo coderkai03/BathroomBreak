@@ -5,6 +5,8 @@ import Navbar from './Navbar';
 import Home from './Home/Home';
 import Study from './Study/Study';
 import Login from './Logins/Login';
+import Deck from './Study/Deck';
+import AddDeck from './Study/AddDeck';
 
 function App() {
   return (
@@ -28,6 +30,12 @@ function App() {
             </Route>
             <Route exact path='/profile'>
               {/* Render Profile component here */}
+            </Route>
+            <Route exact path='/deck/:deckId'>
+              <Deck />
+            </Route>
+            <Route exact path='/add'>
+              <AddDeck />
             </Route>
           </Switch>
         </div>

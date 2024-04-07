@@ -25,9 +25,9 @@ const Home = () => {
     useEffect(() => {
         const user = getAuth().currentUser
         console.log("user: "+user)
-        // if (user == null) {
-        //     history.push('/login')
-        // }
+        if (user == null) {
+            history.push('/login')
+        }
     }, [])
 
     const handleSignOut = () => {
