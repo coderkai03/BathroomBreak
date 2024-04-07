@@ -1,8 +1,8 @@
 .user-profile {
     max-width: 600px;
-    margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
+    margin: 30px auto 30px auto;
     border-radius: 5px;
   }
   
@@ -18,9 +18,11 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    margin: 20px;
   }
   
   .profile-info {
+    margin: 50px;
     flex: 1;
   }
   
@@ -29,3 +31,7 @@
   }
   
 
+.profile-sections {
+  display: flex;
+  flex-direction: column;
+}
