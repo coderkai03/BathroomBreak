@@ -8,6 +8,7 @@ import Login from './Logins/Login';
 import Deck from './Study/Deck';
 import AddDeck from './Study/AddDeck';
 import UserProfile from './Profile/profile';
+import Exam from './Exam/Exam';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             </Route>
             {/* Placeholder routes for Exams and Profile */}
             <Route exact path='/exams'>
-              {/* Render Exams component here */}
+              <Exam />
             </Route>
             <Route exact path='/profile'>
               <UserProfile />
