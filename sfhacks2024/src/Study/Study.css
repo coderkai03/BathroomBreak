@@ -2,14 +2,26 @@
     background-color: #e0e0e0;
     padding: 10px;
     border-radius: 10px;
-    margin-bottom: 15px;
 }
 
-.top-banner h1 {
-    margin: 10px;
-    font-size: 45px;
+.label-text {
+    align-items: center;
+    margin-left: 50px;
+    display: flex;
+    gap: 40px;
 }
 
-.top-banner h2 {
-    margin: 15px;
+.flashcard-container {
+    text-align: center;
+}
+
+.flashcard {
+    font-size: 24px;
+    line-height: 72px;
+    width: 216px;
+    border: 1px solid black;
+    margin: 18px;
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+    user-select: none;
 }

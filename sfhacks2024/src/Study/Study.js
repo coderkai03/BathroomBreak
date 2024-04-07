@@ -2,12 +2,31 @@ import { useState } from "react"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './Study.css';
 
+function Card(props) {
+    const [text, setText] = useState(props.frontSide);
+    function handleClick() {
+        setText(props.backSide)
+    }
+    return <div className="flashcard" onClick={handleClick}>
+        {text}
+    </div>
+}
+
 const Study = () => {
     
     return (
-        <div className="top-banner">
-                <h1> Flashcards</h1>
-                <h2>Click on a study set to begin.</h2>
+        <div>    
+            <div className="top-banner">
+                <div className="label-text">
+                    <h1> Flashcards</h1>
+                    <h2>Click on a card to reveal the answer.</h2>
+                </div>
+            </div>
+            <div className="flashcard-container">
+                <Card frontSide="What is the proper response to scenario A?" backSide="Emergency Medical Response" />
+                <Card frontSide="What is the CPR procedure?" backSide = "Chest compressions"/>
+                <Card frontSide="cat goes?" backSide="meow."/>
+            </div>
         </div>
     )
 }
