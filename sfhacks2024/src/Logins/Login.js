@@ -3,8 +3,8 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 import shieldIcon from "../civil-assets/mingcute_shield-fill.png"
 
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
-
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import {  getFirestore, doc, setDoc, addDoc, collection } from 'firebase/firestore'; // Import Firestore functions
 
 const Login = () => {
     const history = useHistory()
@@ -38,23 +38,38 @@ const Login = () => {
         e.preventDefault();
         setError(null);
     
-        if (fullName != '') {
+        if (fullName.trim() !== '' && email.trim() !== '' && password.trim() !== '') {
             try {
                 const auth = getAuth();
-                await createUserWithEmailAndPassword(auth, email, password);
+                const { user } = await createUserWithEmailAndPassword(auth, email, password);
+    
+                // Ensure that user object contains uid
+                if (user && user.uid) {
+                    const db = getFirestore();
+                    
+                    // Create user document under 'users/{uid}'
+                    await setDoc(doc(db, 'users', user.uid), {
+                        fullName: fullName,
+                        flashcardsRef: `flashcards/${user.uid}`
+                    });
 
-                await postD
-
-
-                // Redirect user to dashboard or home page upon successful sign-up
-                history.push('/');
+                    console.log("posted data?")
+    
+                    // Redirect user to dashboard or home page upon successful sign-up
+                    history.push('/');
+                } else {
+                    throw new Error("Failed to create user. User ID not found.");
+                }
             } catch (error) {
                 // Handle sign-up errors
                 setError(error.message);
-                window.alert(error)
+                console.error(error);
             }
+        } else {
+            setError("Please fill in all fields.");
         }
     }
+    
 
 
     const switchLogin = () => {

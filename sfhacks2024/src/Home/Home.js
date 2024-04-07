@@ -23,7 +23,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        if (!user) {
+        if (user) {
             history.push('/login')
         }
     })
