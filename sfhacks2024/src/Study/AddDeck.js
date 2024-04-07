@@ -28,7 +28,7 @@ const AddDeck = () => {
 
   const openAi = new OpenAIApi(
     new Configuration({
-      apiKey: "",
+      apiKey: "INSERT KEY",
     })
   )
   
