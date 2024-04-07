@@ -9,6 +9,7 @@ import Deck from './Study/Deck';
 import AddDeck from './Study/AddDeck';
 import UserProfile from './Profile/profile';
 import Exam from './Exam/Exam';
+import ExamForm from './Exam/NewExam';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             {/* Placeholder routes for Exams and Profile */}
             <Route exact path='/exams'>
               <Exam />
+            </Route>
+            <Route exact path='/new-exam'>
+              <ExamForm />
             </Route>
             <Route exact path='/profile'>
               <UserProfile />
