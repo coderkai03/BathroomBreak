@@ -18,8 +18,7 @@ form {
 }
 
 .navbar {
-  padding: 30px;
-  padding-bottom: 0px;
+  padding: 0px 30px;
   display: flex;
   align-items: center;
   margin: 0 auto;
