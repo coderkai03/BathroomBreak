@@ -27,7 +27,7 @@ const Home = () => {
             <div className="preferences-div">
                 <h1 className="hear-from-us">Hear from our users</h1>
                 <Preference role={"911 Dispatcher"} desc={"911 dispatchers are trained professionals who answer emergency calls, gather critical information, and coordinate the dispatch of emergency services to the scene of incidents."} imgFirst={true} imgurl={police} />
-                <Preference role={"Firefighter"} desc={"911 dispatchers are trained professionals who answer emergency calls, gather critical information, and coordinate the dispatch of emergency services to the scene of incidents."} imgFirst={false} imgurl={firefighter} />
+                <Preference role={"Firefighter"} desc={"Firefighter respond to emergencies, extinguishing fires, rescuing individuals from the destructive force of flames."} imgFirst={false} imgurl={firefighter} />
                 <Preference role={"Social Worker"} desc={"911 dispatchers are trained professionals who answer emergency calls, gather critical information, and coordinate the dispatch of emergency services to the scene of incidents."} imgFirst={true} imgurl={emt} />
             </div>
         </div>

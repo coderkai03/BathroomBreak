@@ -27,6 +27,7 @@ const Profile = () => {
 
                 <div className="profile-exams">
                     <h1>My Practice Exams</h1>
+                    <h3></h3>
                 </div>
 
                 <div className="profile-flashcards">

@@ -6,6 +6,7 @@ import Home from './Home/Home';
 import Study from './Study/Study';
 import Exams from './Exams/Exams';
 import Profile from './Profile/Profile';
+import Login from './Logins/Login';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route exact path='/profile'>
               <Profile />
+            </Route>
+            <Route exact path='/login'>
+              <Login />
             </Route>
           </Switch>
         </div>

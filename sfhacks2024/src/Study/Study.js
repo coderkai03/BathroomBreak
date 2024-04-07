@@ -2,10 +2,16 @@ import { useState } from "react"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './Study.css';
 
-function Card(props) {
-    const [text, setText] = useState(props.frontSide);
+function Card({ frontSide, backSide}) {
+    const [text, setText] = useState(frontSide);
     function handleClick() {
-        setText(props.backSide)
+        setText( oldState => {
+            if (oldState === frontSide) {
+                return backSide;
+            } else {
+                return frontSide;
+            }
+        })
     }
     return <div className="flashcard" onClick={handleClick}>
         {text}
