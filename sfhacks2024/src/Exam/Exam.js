@@ -1,7 +1,7 @@
 import './Exam.css';
 const Exam = () => {
     function generateExam() {
-
+        alert('Exam is generated!')
     }
     return (
         <div>
@@ -29,16 +29,14 @@ const Exam = () => {
       </div>
       
       <div className="exam-edit">
-      <p className="new-exam">New Exam</p>
-      <div className="all-edit">
-        <div className="edit-rect" />
-        <p className="edit">Edit</p>
-      </div>
+        <input className="new-exam" placeholder = "New Exam" />
     </div>
+    
     <p className="topics">Topics to Include</p>
     <div className="rectangle-topics" />
     <button className = "generate-button" onClick={generateExam}>
-      Generate Exam </button></div>
+      Generate Exam </button>
+      </div>
     )
 }
 
