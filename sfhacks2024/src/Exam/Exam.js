@@ -1,6 +1,8 @@
-
+import './Exam.css';
 const Exam = () => {
-    
+    function generateExam() {
+
+    }
     return (
         <div>
             <div className="exambar">
@@ -16,6 +18,14 @@ const Exam = () => {
           <p className="social-worker">Social Worker</p>
           <p className="start">Start</p>
         </div>
+        <div className="socialexam">
+          <p className="social-worker">Firefighter Duties</p>
+          <p className="start">Start</p>
+        </div>
+        <div className="socialexam">
+          <p className="social-worker">911 Dispatcher</p>
+          <p className="start">Start</p>
+        </div>
       </div>
       
       <div className="exam-edit">
@@ -26,7 +36,9 @@ const Exam = () => {
       </div>
     </div>
     <p className="topics">Topics to Include</p>
-    </div>
+    <div className="rectangle-topics" />
+    <button className = "generate-button" onClick={generateExam}>
+      Generate Exam </button></div>
     )
 }
 
