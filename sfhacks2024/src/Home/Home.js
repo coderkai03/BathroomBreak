@@ -7,7 +7,7 @@ import emt from "../civil-assets/emt-pfp.png"
 
 import { initializeApp } from "firebase/app";
 import firebaseConfig from '../Logins/FBConfig'; // Import the Firebase configuration
-import { getAuth } from 'firebase/auth'
+import { getAuth, signOut } from 'firebase/auth'
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 // Initialize Firebase
@@ -23,14 +23,29 @@ const Home = () => {
 
 
     useEffect(() => {
-        if (user) {
-            history.push('/login')
-        }
-    })
+        const user = getAuth().currentUser
+        console.log("user: "+user)
+        // if (user == null) {
+        //     history.push('/login')
+        // }
+    }, [])
+
+    const handleSignOut = () => {
+        const auth = getAuth();
+        signOut(auth)
+            .then(() => {
+                // Reload the page after sign-out
+                window.location.reload();
+            })
+            .catch((error) => {
+                console.error('Error signing out:', error);
+            });
+    };
 
     return (
         <div className="body-div">
             <div className="welcome-div">
+                {user !== null && <p className="signout" onClick={handleSignOut}>Sign out</p>}
                 <img
                 className="home-img"
                 src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/9tuoj3v0ff5-8%3A7?alt=media&token=d84848fe-ea23-4b2e-a466-994afa09da2d"/>

@@ -19,11 +19,22 @@ function App() {
             <Route exact path='/login'>
               <Login />
             </Route>
+            <Route exact path='/study'>
+              <Study />
+            </Route>
+            {/* Placeholder routes for Exams and Profile */}
+            <Route exact path='/exams'>
+              {/* Render Exams component here */}
+            </Route>
+            <Route exact path='/profile'>
+              {/* Render Profile component here */}
+            </Route>
           </Switch>
         </div>
       </div>
     </Router>
   );
 }
+
 
 export default App;

@@ -23,6 +23,8 @@ const Login = () => {
         try {
           const auth = getAuth();
           await signInWithEmailAndPassword(auth, email, password);
+          const user = getAuth().currentUser
+          console.log("Logged in ", user)
 
 
           // Redirect user to dashboard or home page upon successful sign-in
