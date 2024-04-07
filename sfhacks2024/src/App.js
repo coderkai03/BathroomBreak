@@ -1,10 +1,10 @@
-
+import logo from './logo.svg';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './Navbar';
 import Home from './Home/Home';
 import Study from './Study/Study';
-import Exam from './Exam/Exam';
+import Login from './Logins/Login';
 
 function App() {
   return (
@@ -16,11 +16,18 @@ function App() {
             <Route exact path='/'>
               <Home />
             </Route>
-            <Route exact path='/map'>
+            <Route exact path='/login'>
+              <Login />
+            </Route>
+            <Route exact path='/study'>
               <Study />
             </Route>
-            <Route exact path='/feedback'>
-              <Exam />
+            {/* Placeholder routes for Exams and Profile */}
+            <Route exact path='/exams'>
+              {/* Render Exams component here */}
+            </Route>
+            <Route exact path='/profile'>
+              {/* Render Profile component here */}
             </Route>
           </Switch>
         </div>
@@ -28,5 +35,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;

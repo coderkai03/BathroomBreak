@@ -12,8 +12,13 @@ p, h1 {
   color: #2A5074;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar {
-  padding: 50px;
+  padding: 30px;
   padding-bottom: 0px;
   display: flex;
   align-items: center;
@@ -40,6 +45,7 @@ p, h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
 }
 
 .p-desc {
@@ -108,4 +114,71 @@ p, h1 {
 
 .hear-from-us {
   padding: 50px;
+}
+
+.header {
+  background-color: #e0e4ee;
+  height: 30px;
+}
+
+.login-screen {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.login-block {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  margin: 0 auto; /* Center horizontally within the parent container */
+}
+
+.appIcon {
+  width: 50px;
+}
+
+.login-block input {
+  border-radius: 10px;
+  background-color: #e3f1ff;
+  border: 1px solid #000;
+  padding: 5px;
+}
+
+.login-block label {
+  margin: 10px 0px 5px 0px;
+}
+
+.login-block button {
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.accountSwitch {
+  font-size: 12px;
+  margin: 0;
+  align-self: center;
+  margin: 20px;
+}
+
+.signout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px; /* Adjust the margin as needed */
+}
+
+.preview-div {
+  background-color: #e3f1ff;
+  padding: 20px;
+  margin: 50px;
+  width: 600px;
+  border-radius: 30px;
+}
+
+.preview-div h1 p {
+  margin: 0px;
 }

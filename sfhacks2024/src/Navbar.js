@@ -6,9 +6,9 @@ const Navbar = () => {
             <h1>SF Civil Pro</h1>
             <div className="links">
                 <Link to='/'>Home</Link>
-                <Link to='/exam' >Exam</Link>
-                <Link to='/feedback' >Feedback</Link>
-                {/* onClick={ (event) => event.preventDefault() }  */}
+                <Link to='/study' >Study</Link>
+                <Link to='/exams' >Exams</Link>
+                <Link to='/profile' >Profile</Link>
             </div>
         </nav>
     );
