@@ -1,10 +1,9 @@
 import {useState} from "react"
 
-const Preview = ({name, desc, handleClick}) => {
+const Preview = ({name, handleClick}) => {
     return (
         <div onClick={handleClick} className="preview-div">
             <h1>{name}</h1>
-            <p>{desc}</p>
         </div>
     )
 }

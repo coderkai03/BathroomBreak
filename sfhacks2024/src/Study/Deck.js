@@ -41,7 +41,7 @@ const Deck = () => {
             <img className='backarrow' src={backarrow} onClick={handleBack}/>
 
           {deck && deck.map((item, index) => (
-            <Card key={index} term={item.term} definition={item.definition} />
+            <Card key={index} term={item.split("|")[0]} definition={item.split("|")[1]} />
           ))}
         </div>
     )

@@ -5,8 +5,14 @@ import styles from "./Study.css"
 
 import { Configuration, OpenAIApi } from "openai"
 
+import { getAuth } from "firebase/auth"
+import { getFirestore, doc, setDoc, collection } from 'firebase/firestore';
+
 const AddDeck = () => {
     const history = useHistory()
+    const user = getAuth().currentUser
+
+    console.log("user: ", user)
 
   // State to manage the input value
   const [topic, setTopic] = useState('');
@@ -14,12 +20,37 @@ const AddDeck = () => {
   // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Topic:', topic);
+  
+    // Fetch user's UID
+    const user = getAuth().currentUser;
+    const uid = user.uid;
+  
+    // Generate 10 terms and definitions using OpenAI
+    const generatedContent = (await handleApi()).toString();
+  
+    // Find the index of the first "|" character
+  const firstPipeIndex = generatedContent.indexOf('|');
 
-    handleApi()
-
-    history.goBack()
+  // Skip the first "|" and then split the content into terms and definitions
+  const termsDefinitions = generatedContent.slice(firstPipeIndex + 1).split('|');
+  
+    // Format data as array of strings "term|definition"
+    const deckData = [];
+    for (let i = 0; i < termsDefinitions.length; i += 2) {
+      const term = termsDefinitions[i];
+      const definition = termsDefinitions[i + 1];
+      deckData.push(`${term}|${definition}`);
+    }
+  
+    // Post the new deck to Firestore
+    const db = getFirestore();
+    const userRef = doc(db, 'users', uid); // Reference to the user's document
+    await setDoc(userRef, { [topic]: deckData }, { merge: true }); // Merge the data with existing data if any
+  
+    // Redirect or perform any additional actions as needed
+    history.goBack();
   };
+  
 
   // Function to handle input change
   const handleChange = (event) => {
@@ -28,7 +59,7 @@ const AddDeck = () => {
 
   const openAi = new OpenAIApi(
     new Configuration({
-      apiKey: "INSERT KEY",
+      apiKey: "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",
     })
   )
   
@@ -38,6 +69,12 @@ const AddDeck = () => {
     messages: [{ role: "user", content: `Generate 10 important terms and definitions corresponding to ${topic}. Limit 1 sentence per definition. Use format: |term|definition|. Concatenate entire output into one paragraph.` }],
     })
     console.log(response.data.choices[0].message.content)
+
+    // Extract the generated content from the response
+  const generatedContent = response.data.choices[0].message.content;
+
+  // Return the generated content as a string
+  return generatedContent.toString();
 }
 
   return (
